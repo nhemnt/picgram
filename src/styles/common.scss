@@ -1,0 +1,173 @@
+@import './variables';
+
+// body {
+//   margin: 0;
+// }
+
+* {
+    box-sizing: border-box;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+header {
+    color: $primary-color-dark;
+    background-color: $primary-color;
+    text-align: center;
+    padding: 5px;
+}
+.border-primary {
+    border: 1px solid $primary-color-dark;
+}
+.d-flex {
+    display: flex;
+}
+
+.btn-primary {
+    background-color: $bgColor;
+    border: 1px solid $primary-color-dark;
+}
+.text-danger {
+    color: $danger-color;
+}
+
+.bg-success {
+    background-color: $success-color;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.justify-content-s-b {
+    justify-content: space-between;
+}
+
+.p-1 {
+    padding: 5px;
+}
+.py-1 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.px-3 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.ml-2 {
+    margin-left: 10px;
+}
+.position-absolute-lg {
+    @media (min-width: 768px) {
+        position: absolute;
+    }
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.grid {
+    width: $grid-size;
+    margin: 15px 30px;
+}
+
+.search {
+    width: $grid-size;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.container {
+    padding: 0 5%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.img {
+    max-width: 100%;
+    vertical-align: bottom;
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+}
+
+.text-capital {
+    text-transform: capitalize;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.action {
+    background: none;
+    border: none;
+    color: $primary-color-dark;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.before-line:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    border-radius: 8px;
+    background: $primary-color-dark;
+}
+
+.max-h-200 {
+    height: $grid-size/2;
+    overflow-y: auto;
+}
+
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.max-height-30 {
+    max-height: 30px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.dialog {
+    background: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    max-height: 400px;
+
+    img {
+        height: 400px;
+    }
+}
