@@ -10,8 +10,7 @@ import { filterData } from 'helper/utils';
 
 const Gallery = () => {
     const dispatch = useDispatch();
-    const data = useSelector((state) => state.imageReducer.data);
-    const search = useSelector((state) => state.imageReducer.search);
+    const { data, search } = useSelector((state) => state.imageReducer);
 
     const handleModal = (e) => {
         if (dispatch && e) dispatch(openModal(e.target.src));

@@ -1,11 +1,14 @@
 import React from 'react';
-import { deleteComment } from 'actions/imageAction';
 import { useDispatch } from 'react-redux';
+import { DELETE_COMMENT } from 'actions/types';
 
 const Comments = ({ comments = [], id }) => {
     const dispatch = useDispatch();
     const deletePostComment = (index) => {
-        if (dispatch) dispatch(deleteComment(id, index));
+        dispatch({
+            type: DELETE_COMMENT,
+            payload: { id, commentIndex: index }
+        });
     };
     return (
         <div className="max-h-200">

@@ -45,30 +45,13 @@ export const updateLike = (id) => (dispatch) => {
     updateData(dispatch, SET_IMAGES, newData);
 };
 
-export const sortImages = (type) => (dispatch) => {
-    const original = getData() || [];
-    const sort = () => {
-        switch (type) {
-            case 'comment': {
-                return original.sort((a, b) => b.comments.length - a.comments.length);
-            }
-            case 'like':
-                return original.sort((a, b) => b.likes - a.likes);
-            default:
-                return [];
-        }
-    };
-    updateData(dispatch, SET_IMAGES, sort());
-};
-
 export const fetchImages = () => (dispatch) => {
     API.get(imageURL)
         .then((res) => {
-            updateData(
-                dispatch,
-                SET_IMAGES,
-                res.pics.map((current) => ({ ...current, like: false }))
-            );
+            dispatch({
+                type: SET_IMAGES,
+                payload: res.pics.map((current) => ({ ...current, like: false }))
+            });
         })
         .catch((err) => console.log(err));
 };

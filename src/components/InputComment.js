@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { ADD_COMMENT } from 'actions/types';
 
-import { addComment } from 'actions/imageAction';
 const InputComment = ({ id }) => {
     const dispatch = useDispatch();
     const [comment, setComment] = useState('');
@@ -12,10 +12,14 @@ const InputComment = ({ id }) => {
     };
     const submitComment = (e) => {
         if (e) e.preventDefault();
-        if (dispatch) {
-            dispatch(addComment(id, comment));
-            setComment('');
-        }
+        dispatch({
+            type: ADD_COMMENT,
+            payload: {
+                id,
+                comment
+            }
+        });
+        setComment('');
     };
 
     return (

@@ -1,13 +1,16 @@
 import React from 'react';
-import { updateLike } from 'actions/imageAction';
+import { HANDLE_LIKE_DISLIKE } from 'actions/types';
 import { useDispatch } from 'react-redux';
 
 const Likes = ({ count, id, like }) => {
     const dispatch = useDispatch();
     const handleLike = () => {
-        if (dispatch) {
-            dispatch(updateLike(id));
-        }
+        dispatch({
+            type: HANDLE_LIKE_DISLIKE,
+            payload: {
+                id
+            }
+        });
     };
     return (
         <div className="p-1">
